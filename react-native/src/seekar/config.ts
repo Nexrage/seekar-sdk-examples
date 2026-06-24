@@ -9,6 +9,7 @@
 import { configureSeekAR, initializeSeekAR } from "@nexrage/react-native"
 import { seekarAssetResolver } from "./assetResolver"
 import { seekarAudioAdapter } from "./audio"
+import { seekarSecureStore } from "./secureStore"
 import {
   LICENSE_CHECKIN_URL,
   LICENSE_MOCK,
@@ -32,11 +33,11 @@ configureSeekAR({
 // default. Set LICENSE_MOCK=true (+ a LICENSE_CHECKIN_URL echo mock or the local
 // stub) only for fully-offline development.
 //
-// NOTE: no `secureStore` is injected here, so the SDK uses a non-persistent
-// in-memory cache (it warns once). For production, inject a SeekARSecureStore
-// backed by `expo-secure-store` so offline grace survives restarts.
+// `secureStore` is an expo-secure-store adapter (Keychain / EncryptedSharedPreferences),
+// so the cached lease persists across launches and offline grace survives restarts.
 initializeSeekAR(SEEKAR_LICENSE_KEY, {
   product: "rn",
+  secureStore: seekarSecureStore,
   ...(LICENSE_SERVER_URL ? { licenseServerUrl: LICENSE_SERVER_URL } : {}),
   ...(LICENSE_CHECKIN_URL ? { licenseCheckInUrl: LICENSE_CHECKIN_URL } : {}),
   mockMode: LICENSE_MOCK,
