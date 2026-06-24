@@ -6,7 +6,7 @@
  * before any AR view mounts. The SDK reads this config from a singleton (not
  * React context) because Viro scenes render in a separate renderer root.
  */
-import { configureSeekAR, initializeSeekAR } from "@seekar/react-native"
+import { configureSeekAR, initializeSeekAR } from "@nexrage/react-native"
 import { seekarAssetResolver } from "./assetResolver"
 import { seekarAudioAdapter } from "./audio"
 import {

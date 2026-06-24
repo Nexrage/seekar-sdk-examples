@@ -1,6 +1,6 @@
 # SeekAR Demo — React Native (iOS + Android)
 
-A single Expo app that consumes the `@seekar/react-native` SDK as an installed
+A single Expo app that consumes the `@nexrage/react-native` SDK as an installed
 package to prove the core SeekAR AR collection flow on both iOS and Android:
 
 **local map -> tap collectible -> geospatial/surface placement -> tap-to-collect**
@@ -69,18 +69,18 @@ rebuild — see Run below.
 
 This example supports two consume modes (per the build workflow's local dev loop):
 
-- **`local` (default for dev):** `@seekar/react-native` is a local `file:` link
-  to the sibling private SDK repo (`"@seekar/react-native": "file:../../seekar-sdk"`
+- **`local` (default for dev):** `@nexrage/react-native` is a local `file:` link
+  to the sibling private SDK repo (`"@nexrage/react-native": "file:../../seekar-sdk"`
   in `package.json`). npm symlinks it into `node_modules`; `metro.config.js`
   follows the symlink and watches the SDK so rebuilds are picked up. The SDK's
   `prepare` script builds its `dist` on install. This requires both repos checked
   out side by side (`Projects/seekar-sdk` and `Projects/seekar-sdk-examples`).
 - **`published` (release verification):** replace the `file:` link with the
-  published version (e.g. `"@seekar/react-native": "^0.2.0"`) from the private
+  published version (e.g. `"@nexrage/react-native": "^0.2.0"`) from the private
   registry and reinstall. This is the real end-user path; verify it on a clean
   machine before release.
 
-The app imports only from `@seekar/react-native` — never from ReactVision/Viro,
+The app imports only from `@nexrage/react-native` — never from ReactVision/Viro,
 which the SDK fully encapsulates.
 
 ## Prerequisites
@@ -89,7 +89,7 @@ which the SDK fully encapsulates.
 - A **physical device** with ARKit (iOS 17.6+) or ARCore (Android). AR does not
   run in the iOS Simulator / Android emulator, and Viro cannot run in Expo Go.
 
-> **ReactVision credentials are handled inside the `@seekar/react-native` SDK at
+> **ReactVision credentials are handled inside the `@nexrage/react-native` SDK at
 > build time and are invisible to this example.** The SDK's config plugin bakes
 > the SeekAR-owned ReactVision key/project id into the native build, so the demo
 > never sets, stores, or sees them — there are no ReactVision values in `.env`.
