@@ -1,0 +1,8 @@
+# IDE
+.idea/
+
+# Docs
+docs/runbook-rn-ios.md
+
+# OS
+.DS_Store
