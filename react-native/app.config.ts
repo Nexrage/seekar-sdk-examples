@@ -26,7 +26,7 @@ const config: ExpoConfig = {
   name: "SeekAR Demo",
   slug: "seekar-demo",
   scheme: "seekardemo",
-  version: "0.1.0",
+  version: "0.2.0",
   orientation: "portrait",
   icon: "./assets/app-icon.jpg",
   splash: {
@@ -63,6 +63,10 @@ const config: ExpoConfig = {
         microphonePermission: "SeekAR Demo may need microphone access for AR capture.",
       },
     ],
+    // Secure storage (Keychain / EncryptedSharedPreferences) for the SeekAR
+    // license cache — see src/seekar/secureStore.ts. Persists the lease so
+    // offline grace survives app restarts.
+    "expo-secure-store",
     [
       // App-specific build property the SDK does not own: react-native-maps
       // does not link React-Core under Viro's dynamic frameworks (undefined
