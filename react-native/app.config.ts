@@ -63,6 +63,27 @@ const config: ExpoConfig = {
         microphonePermission: "SeekAR Demo may need microphone access for AR capture.",
       },
     ],
+    [
+      // App-specific build property the SDK does not own: react-native-maps
+      // does not link React-Core under Viro's dynamic frameworks (undefined
+      // RCT* symbols at link time — e.g. _OBJC_CLASS_$_RCTComponentData), so
+      // force it (and the Google Maps impl) to static linking.
+      //
+      // ORDERING MATTERS: expo-build-properties writes `ios.forceStaticLinking`
+      // unconditionally (defaulting to `[]`), and the SeekAR SDK plugin invokes
+      // expo-build-properties internally (for useFrameworks/deploymentTarget).
+      // Config-plugin mods run newest→oldest, so the *earliest-registered*
+      // invocation writes last and wins. This entry MUST stay ABOVE
+      // "@nexrage/react-native" so our forceStaticLinking value survives; the
+      // SDK's useFrameworks="dynamic"/deploymentTarget are preserved because
+      // omitted properties are no-ops (only truthy values are written).
+      "expo-build-properties",
+      {
+        ios: {
+          forceStaticLinking: ["react-native-maps", "react-native-google-maps"],
+        },
+      },
+    ],
     // SeekAR SDK — encapsulates ALL ReactVision Viro native setup: New
     // Architecture (Fabric), AR permissions + iOS usage strings, the baked
     // ReactVision RVApiKey/RVProjectId, and the iOS dynamic-frameworks /
@@ -73,19 +94,6 @@ const config: ExpoConfig = {
     // package.json — the real end-user form). This is exactly what a consumer
     // app writes after installing @nexrage/react-native from the registry.
     "@nexrage/react-native",
-    [
-      // App-specific build property the SDK does not own: react-native-maps
-      // does not link React-Core under Viro's dynamic frameworks (undefined
-      // RCT* symbols at link time), so force it (and the Google Maps impl) to
-      // static linking. expo-build-properties merges across invocations, so
-      // this composes with the SeekAR plugin's iOS settings.
-      "expo-build-properties",
-      {
-        ios: {
-          forceStaticLinking: ["react-native-maps", "react-native-google-maps"],
-        },
-      },
-    ],
   ],
 
   extra: {
