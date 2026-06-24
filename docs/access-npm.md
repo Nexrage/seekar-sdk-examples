@@ -1,6 +1,6 @@
-# Access — React Native (`@seekar/react-native`)
+# Access — React Native (`@nexrage/react-native`)
 
-The RN SDK is published to a **private npm registry** (GitHub Packages, `@seekar`
+The RN SDK is published to a **private npm registry** (GitHub Packages, `@nexrage`
 scope). You need a token with `read:packages`.
 
 ## 1. Configure the registry
@@ -8,7 +8,7 @@ scope). You need a token with `read:packages`.
 Add an `.npmrc` to your project (or `~/.npmrc`):
 
 ```ini
-@seekar:registry=https://npm.pkg.github.com
+@nexrage:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
 ```
 
@@ -21,7 +21,7 @@ export NODE_AUTH_TOKEN=ghp_xxx   # token with read:packages
 ## 2. Install
 
 ```bash
-npm install @seekar/react-native
+npm install @nexrage/react-native
 ```
 
 ## 3. Configure the app
@@ -30,12 +30,12 @@ Add the Expo config plugin and initialize licensing:
 
 ```ts
 // app.config.ts
-plugins: ["@seekar/react-native", /* ... */]
+plugins: ["@nexrage/react-native", /* ... */]
 ```
 
 ```ts
 // at startup
-import { initializeSeekAR, configureSeekAR } from "@seekar/react-native"
+import { initializeSeekAR, configureSeekAR } from "@nexrage/react-native"
 
 configureSeekAR({ /* assetResolver, audio, particleImage ... */ })
 

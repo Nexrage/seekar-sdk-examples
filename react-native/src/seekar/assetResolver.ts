@@ -9,7 +9,7 @@
  * This mirrors `processModelUrl` from the reference app's
  * app-utils/assetDecryption.ts, ported to depend only on the demo env.
  */
-import type { SeekARAssetResolver } from "@seekar/react-native"
+import type { SeekARAssetResolver } from "@nexrage/react-native"
 import { getApiHost } from "./env"
 
 /** True when a URL is an encrypted SeekAR asset pointer (`.txt` blob/CDN). */

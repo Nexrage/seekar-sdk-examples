@@ -12,7 +12,7 @@ sample apps and guides for authenticating to pull each pre-packaged artifact.
 
 | Platform | Package | Sample | Status |
 | --- | --- | --- | --- |
-| React Native | `@seekar/react-native` (npm) | [`react-native/`](./react-native) | Available |
+| React Native | `@nexrage/react-native` (npm) | [`react-native/`](./react-native) | Available |
 | iOS (Swift) | `SeekAR` (`.xcframework` / SPM / CocoaPods) | [`swift/`](./swift) | Coming soon (Phase 2) |
 | Android (Kotlin) | `io.seekar:seekar-android` (Maven) | [`kotlin/`](./kotlin) | Coming soon (Phase 3) |
 
@@ -28,13 +28,15 @@ guides in [`docs/`](./docs):
 - [Maven (Android)](./docs/access-maven.md)
 - [XCFramework / SPM / CocoaPods (iOS)](./docs/access-xcframework.md)
 
+Maintainers: [setting up the private npm registry + license server](./docs/setup-private-npm.md).
+
 To request access (a distribution token / license key), contact the SeekAR team.
 
 ## Repo layout
 
 ```text
 seekar-sdk-examples/
-  react-native/   Expo app consuming @seekar/react-native
+  react-native/   Expo app consuming @nexrage/react-native
   swift/          iOS sample (Phase 2)
   kotlin/         Android sample (Phase 3)
   assets/         shared sample collectibles / coordinates (identical across apps)

@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@seekar/react-native": "file:../../seekar-sdk",
+    "@nexrage/react-native": "file:../../seekar-sdk",
     "axios": "^1.18.1",
     "expo": "54.0.30",
     "expo-application": "~7.0.8",

@@ -6,7 +6,7 @@ SeekAR team.
 
 | Platform | Channel | Guide |
 | --- | --- | --- |
-| React Native | private npm (GitHub Packages, `@seekar` scope) | [access-npm.md](./access-npm.md) |
+| React Native | private npm (GitHub Packages, `@nexrage` scope) | [access-npm.md](./access-npm.md) |
 | Android (Kotlin) | authenticated Maven (Reposilite) | [access-maven.md](./access-maven.md) |
 | iOS (Swift) | XCFramework via SPM / CocoaPods | [access-xcframework.md](./access-xcframework.md) |
 
@@ -26,3 +26,9 @@ Endpoints (dev shown; production drops the `-dev`):
 | License server | `https://license-dev.seekar.io` |
 | Maven (Android) | `https://maven-dev.seekar.io` |
 | XCFramework host (iOS) | `https://sdk-dev.seekar.io` |
+
+## Maintainer / operator guides
+
+- [setup-private-npm.md](./setup-private-npm.md) — stand up, publish to, and
+  consume the private npm registry (`@nexrage`, GitHub Packages), plus the
+  runtime license-server tie-in.

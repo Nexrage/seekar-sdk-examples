@@ -7,7 +7,7 @@
  * track, so the adapter is a safe, ref-counted no-op that simply logs. Wire a
  * real background player here to replicate the reference app's ducking.
  */
-import type { SeekARAudioAdapter } from "@seekar/react-native"
+import type { SeekARAudioAdapter } from "@nexrage/react-native"
 
 let activeArAudioCount = 0
 

@@ -71,8 +71,8 @@ const config: ExpoConfig = {
     //
     // Resolved as the installed package (consumed via the local `file:` link in
     // package.json — the real end-user form). This is exactly what a consumer
-    // app writes after installing @seekar/react-native from the registry.
-    "@seekar/react-native",
+    // app writes after installing @nexrage/react-native from the registry.
+    "@nexrage/react-native",
     [
       // App-specific build property the SDK does not own: react-native-maps
       // does not link React-Core under Viro's dynamic frameworks (undefined
