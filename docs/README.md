@@ -32,3 +32,6 @@ Endpoints (dev shown; production drops the `-dev`):
 - [setup-private-npm.md](./setup-private-npm.md) — stand up, publish to, and
   consume the private npm registry (`@nexrage`, GitHub Packages), plus the
   runtime license-server tie-in.
+- [runbook-rn-ios.md](./runbook-rn-ios.md) — build & run the React Native
+  example on a physical iPhone (yarn), the local SDK consume mode, and fixes for
+  the Viro + `react-native-maps` + New Architecture build gotchas.

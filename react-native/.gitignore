@@ -13,6 +13,9 @@ web-build/
 .env.*
 !.env.example
 
+# Local SDK tarball produced by `npm run sync:sdk` (dev consume mode)
+vendor/
+
 # Logs / OS
 *.log
 .DS_Store
