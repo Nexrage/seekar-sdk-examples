@@ -1,0 +1,8 @@
+# SwiftPM
+.build/
+Package.resolved
+
+# Local SeekAR binary synced by scripts/sync-sdk.sh (consume mode). The xcframework
+# is a build artifact pulled from the sibling SDK repo, not versioned here.
+Frameworks/
+DerivedData/
